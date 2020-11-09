@@ -22,6 +22,8 @@ namespace ACM.BL
 
         public string FirstName { get; set; }
 
+        public string LastName { get; set; }
+
         public string FullName
         {
             get
@@ -39,19 +41,6 @@ namespace ACM.BL
             }
         }
 
-        private string _lastName;
-        public string LastName
-        {
-            get
-            {
-                return _lastName;
-            }
-            set
-            {
-                _lastName = value;
-            }
-        }
-
         public bool Validate()
         {
             var isValid = true;
@@ -60,21 +49,6 @@ namespace ACM.BL
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
 
             return isValid;
-        }
-
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
-
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
-
-        public bool Save()
-        {
-            return true;
         }
 
     }
